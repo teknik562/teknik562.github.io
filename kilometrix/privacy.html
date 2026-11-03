@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kilometrix – Privacy policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<p class="lang"><a href="#en">English</a> · <a href="#tr">Türkçe</a></p>
+
+<article id="en">
+<h1>Kilometrix privacy policy</h1>
+<p class="meta">Effective date: 3 November 2026</p>
+
+<p>Kilometrix is an Android app for logging the charging and energy use of your vehicles. It is developed by an individual developer (“we”, contact: <a href="mailto:teknik0562@gmail.com">teknik0562@gmail.com</a>). This policy explains what data the app handles, where it is kept and how you can delete it.</p>
+
+<h2>Summary</h2>
+<ul>
+<li>Your vehicles, charge records and readings are stored <strong>only on your phone</strong>.</li>
+<li>Connecting a Tesla account and Google Drive backup are <strong>optional</strong>.</li>
+<li>If you connect a Tesla account, our server stores only what it needs to fetch data for you: encrypted Tesla tokens, your vehicles’ VINs, your credits and a request log. Vehicle data (including location) passes through the server to your phone and is <strong>not stored</strong> on the server.</li>
+<li>No ads, no analytics or tracking SDKs, and we never sell or share your data for advertising.</li>
+<li>You can delete your account and server data from inside the app at any time.</li>
+</ul>
+
+<h2>1. Data stored on your phone</h2>
+<p>Vehicles you add, charge records (date, state of charge, energy, price, provider, location category), vehicle readings (odometer, state of charge, range, charging status and, for Tesla vehicles, the vehicle’s location), saved home/work locations, your settings and any vehicle photo you choose. This data stays in the app’s private storage on your device and is not sent to us. Vehicle photo background removal runs on the device (Google ML Kit). Uninstalling the app deletes this data.</p>
+
+<h2>2. Google Drive backup (optional)</h2>
+<p>If you turn on Drive backup, the app saves a copy of the data above to the hidden app-data folder of <strong>your own</strong> Google Drive (<code>drive.appdata</code> permission; the app cannot see your other files). The app also reads your Google account’s email address to show which account is used. We do not have access to your Drive. You can delete the backup in Google Drive → Settings → Manage apps → Kilometrix → Delete hidden app data.</p>
+
+<h2>3. Tesla account (optional)</h2>
+<p>You sign in on Tesla’s own page; we never see your Tesla password. The app requests these Tesla permissions: vehicle information, vehicle location and offline access. Requests to Tesla’s Fleet API are made by our server (hosted on Cloudflare Workers), which stores:</p>
+<ul>
+<li>an internal user ID and your Tesla account’s identifier (a random ID issued by Tesla, not your name or email);</li>
+<li>Tesla access and refresh tokens, encrypted (AES-GCM);</li>
+<li>the VINs and display names of the vehicles you connected;</li>
+<li>credit balance records: product, amount, date and the Google Play purchase token;</li>
+<li>a request log (time, VIN and a keyed hash of it, request type, result) used to enforce usage limits and track costs. Free and daily limits apply per user and per vehicle.</li>
+</ul>
+<p>The vehicle data returned by Tesla (charge state, odometer, location, etc.) is forwarded to your phone and is not stored on the server. Your phone keeps only an encrypted session key for our server.</p>
+
+<h2>4. Purchases and app integrity</h2>
+<p>Credits are bought through Google Play. Google processes the payment; we receive only the purchase token and product, which our server verifies with Google. A one-way hash of your internal user ID is attached to the purchase so it can be credited to the right account. To protect the service, requests to Tesla include a Google Play Integrity token, which Google evaluates to confirm the app is genuine and installed from Google Play.</p>
+
+<h2>5. Service providers</h2>
+<ul>
+<li><strong>Tesla</strong> – vehicle data (<a href="https://www.tesla.com/legal/privacy">Tesla privacy notice</a>).</li>
+<li><strong>Cloudflare</strong> – hosts our server and database.</li>
+<li><strong>Google</strong> – Google Play (purchases, Play Integrity), Google Drive (your backup), ML Kit (on-device).</li>
+</ul>
+<p>We do not share your data with anyone else, except where required by law.</p>
+
+<h2>6. Retention</h2>
+<p>Tesla tokens are deleted when you disconnect the last vehicle of that Tesla account. Your user record and credits are kept, so that credits survive reinstalling the app, until you delete your account. When you delete your account, all server data above is deleted immediately; request log entries are kept only in anonymous form (user ID and VIN removed) for cost accounting. To prevent abuse of the monthly free allowance, those entries keep an irreversible keyed hash of the VIN until the end of the calendar month; it cannot be turned back into the VIN and is then removed.</p>
+
+<h2>7. Deleting your account and data</h2>
+<p>In the app: vehicle settings → Tesla account → <em>Delete account and data</em>. If you no longer have the app, see <a href="delete-account.html">how to request deletion</a>.</p>
+
+<h2>8. Security</h2>
+<p>All connections use HTTPS. Tesla tokens are encrypted at rest; the Tesla client secret and tokens are never stored in the app.</p>
+
+<h2>9. Children</h2>
+<p>Kilometrix is not directed at children and is intended for vehicle owners and drivers.</p>
+
+<h2>10. Your rights</h2>
+<p>Depending on where you live (for example under the GDPR or Turkey’s KVKK) you may have the right to access, correct or delete your data and to object to its processing. Contact us at <a href="mailto:teknik0562@gmail.com">teknik0562@gmail.com</a>; include your vehicle’s VIN so we can find your record.</p>
+
+<h2>11. Changes</h2>
+<p>If this policy changes, the new version will be published on this page with a new effective date.</p>
+</article>
+
+<hr>
+
+<article id="tr" lang="tr">
+<h1>Kilometrix gizlilik politikası</h1>
+<p class="meta">Yürürlük tarihi: 3 Kasım 2026</p>
+
+<p>Kilometrix, araçlarının şarj ve enerji tüketimini kaydetmeye yarayan bir Android uygulamasıdır. Bireysel bir geliştirici tarafından geliştirilir (“biz”, iletişim: <a href="mailto:teknik0562@gmail.com">teknik0562@gmail.com</a>). Bu politika, uygulamanın hangi verileri işlediğini, nerede tuttuğunu ve nasıl silebileceğini açıklar.</p>
+
+<h2>Özet</h2>
+<ul>
+<li>Araçların, şarj kayıtların ve ölçümlerin <strong>sadece telefonunda</strong> saklanır.</li>
+<li>Tesla hesabı bağlamak ve Google Drive yedeği <strong>isteğe bağlıdır</strong>.</li>
+<li>Tesla hesabı bağlarsan sunucumuz sadece veri çekmek için gerekenleri saklar: şifreli Tesla anahtarları, araçların VIN’i, kredilerin ve istek kaydı. Araç verisi (konum dahil) sunucudan geçip telefonuna gelir, sunucuda <strong>saklanmaz</strong>.</li>
+<li>Reklam, analiz ya da izleme SDK’sı yoktur; verilerin satılmaz ve reklam için paylaşılmaz.</li>
+<li>Hesabını ve sunucudaki verilerini istediğin zaman uygulamanın içinden silebilirsin.</li>
+</ul>
+
+<h2>1. Telefonunda saklanan veriler</h2>
+<p>Eklediğin araçlar, şarj kayıtları (tarih, şarj yüzdesi, enerji, fiyat, sağlayıcı, konum türü), araç ölçümleri (kilometre, şarj yüzdesi, menzil, şarj durumu ve Tesla araçlarda aracın konumu), kaydettiğin ev/iş konumları, ayarların ve seçtiğin araç fotoğrafı. Bu veriler uygulamanın cihazdaki özel alanında kalır, bize gönderilmez. Araç fotoğrafının arka planı cihazda kaldırılır (Google ML Kit). Uygulamayı kaldırınca bu veriler silinir.</p>
+
+<h2>2. Google Drive yedeği (isteğe bağlı)</h2>
+<p>Drive yedeğini açarsan uygulama yukarıdaki verilerin bir kopyasını <strong>kendi</strong> Google Drive’ının gizli uygulama klasörüne kaydeder (<code>drive.appdata</code> izni; uygulama diğer dosyalarını göremez). Hangi hesabın kullanıldığını göstermek için Google hesabının e-posta adresi de okunur. Drive’ına bizim erişimimiz yoktur. Yedeği Google Drive → Ayarlar → Uygulamaları yönet → Kilometrix → Gizli uygulama verilerini sil yoluyla silebilirsin.</p>
+
+<h2>3. Tesla hesabı (isteğe bağlı)</h2>
+<p>Girişi Tesla’nın kendi sayfasında yaparsın; Tesla şifreni hiçbir zaman görmeyiz. Uygulama Tesla’dan şu izinleri ister: araç bilgileri, araç konumu ve çevrimdışı erişim. Tesla Fleet API istekleri sunucumuz (Cloudflare Workers) tarafından yapılır; sunucu şunları saklar:</p>
+<ul>
+<li>bir iç kullanıcı kimliği ve Tesla hesabının kimliği (Tesla’nın verdiği rastgele bir kimlik; adın ya da e-postan değil);</li>
+<li>şifrelenmiş (AES-GCM) Tesla erişim ve yenileme anahtarları;</li>
+<li>bağladığın araçların VIN’i ve görünen adı;</li>
+<li>kredi kayıtları: ürün, miktar, tarih ve Google Play satın alma anahtarı;</li>
+<li>kullanım sınırları ve maliyet takibi için istek kaydı (zaman, VIN ve anahtarlı özeti, istek türü, sonuç). Ücretsiz ve günlük sınırlar hem kullanıcı hem araç başına uygulanır.</li>
+</ul>
+<p>Tesla’dan gelen araç verisi (şarj durumu, kilometre, konum vb.) telefonuna iletilir, sunucuda saklanmaz. Telefonunda sadece sunucumuz için şifreli bir oturum anahtarı tutulur.</p>
+
+<h2>4. Satın almalar ve uygulama bütünlüğü</h2>
+<p>Krediler Google Play üzerinden satın alınır. Ödemeyi Google işler; biz sadece satın alma anahtarını ve ürünü alırız, sunucumuz bunu Google’dan doğrular. Kredinin doğru hesaba yüklenmesi için satın almaya iç kullanıcı kimliğinin tek yönlü bir özeti eklenir. Hizmeti korumak için Tesla’ya giden isteklere bir Google Play Integrity anahtarı eklenir; Google bunu uygulamanın gerçek olduğunu ve Google Play’den kurulduğunu doğrulamak için değerlendirir.</p>
+
+<h2>5. Hizmet sağlayıcılar</h2>
+<ul>
+<li><strong>Tesla</strong> – araç verisi (<a href="https://www.tesla.com/legal/privacy">Tesla gizlilik bildirimi</a>).</li>
+<li><strong>Cloudflare</strong> – sunucumuzu ve veritabanını barındırır.</li>
+<li><strong>Google</strong> – Google Play (satın alma, Play Integrity), Google Drive (yedeğin), ML Kit (cihazda).</li>
+</ul>
+<p>Yasal zorunluluk dışında verilerini başka kimseyle paylaşmayız.</p>
+
+<h2>6. Saklama süresi</h2>
+<p>Tesla anahtarları, o Tesla hesabındaki son aracın bağlantısını kaldırınca silinir. Kullanıcı kaydın ve kredilerin, uygulamayı yeniden kursan da kaybolmasın diye hesabını silene kadar tutulur. Hesabını silince yukarıdaki tüm sunucu verileri hemen silinir; istek kayıtları sadece maliyet hesabı için kimliksiz olarak (kullanıcı kimliği ve VIN çıkarılarak) kalır. Aylık ücretsiz hakkın kötüye kullanılmasını önlemek için bu kayıtlarda VIN’in geri çevrilemez, anahtarlı bir özeti takvim ayının sonuna kadar tutulur; özetten VIN elde edilemez ve ay sonunda silinir.</p>
+
+<h2>7. Hesabını ve verilerini silme</h2>
+<p>Uygulamada: araç ayarları → Tesla hesabı → <em>Hesabı ve verileri sil</em>. Uygulama artık sende yoksa <a href="delete-account.html#tr">silme talebi nasıl yapılır</a> sayfasına bak.</p>
+
+<h2>8. Güvenlik</h2>
+<p>Tüm bağlantılar HTTPS ile yapılır. Tesla anahtarları şifreli saklanır; Tesla istemci sırrı ve anahtarları uygulamada hiç bulunmaz.</p>
+
+<h2>9. Çocuklar</h2>
+<p>Kilometrix çocuklara yönelik değildir; araç sahipleri ve sürücüler içindir.</p>
+
+<h2>10. Hakların</h2>
+<p>6698 sayılı KVKK’nın 11. maddesi (ve bulunduğun yere göre GDPR) kapsamında verilerine erişme, düzeltilmesini ya da silinmesini isteme ve işlenmesine itiraz etme hakların vardır. <a href="mailto:teknik0562@gmail.com">teknik0562@gmail.com</a> adresine yaz; kaydını bulabilmemiz için aracının VIN’ini ekle.</p>
+
+<h2>11. Değişiklikler</h2>
+<p>Bu politika değişirse yeni hali yeni yürürlük tarihiyle bu sayfada yayınlanır.</p>
+</article>
+</main>
+</body>
+</html>
